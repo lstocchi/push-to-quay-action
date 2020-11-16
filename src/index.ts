@@ -34,7 +34,7 @@ export async function run(): Promise<void> {
     }
 
     // push image
-    const registryUrl = `${registry}:${imageToPush}`;
+    const registryUrl = `${registry.replace(/\/$/, '')}/${imageToPush}`;
     const push: CommandResult = await execute(podman, ['push', '--creds', `${username}:${password}`, `${imageToPush}`, `${registryUrl}`]);
     if (push.succeeded === false) {
         return Promise.reject(new Error(push.reason));
