@@ -1,4 +1,4 @@
-name: 'Push To Registry'
+name: 'TestPushToRegistryLuca'
 description: 'This action allows you to push an image to Quay'
 author: 'Red Hat'
 branding:
